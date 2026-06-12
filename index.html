@@ -7,183 +7,79 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/tabler-icons.min.css">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
   :root {
-    --bg: #ffffff;
-    --bg2: #f5f5f3;
-    --bg3: #eeede8;
-    --text: #1a1a18;
-    --text2: #5f5e5a;
-    --text3: #888780;
-    --border: rgba(0,0,0,0.12);
-    --border2: rgba(0,0,0,0.22);
-    --radius-md: 8px;
-    --radius-lg: 12px;
-    --teal: #1D9E75;
-    --teal-dark: #0F6E56;
-    --teal-bg: #E1F5EE;
-    --teal-text: #085041;
-    --amber: #EF9F27;
-    --amber-dark: #854F0B;
-    --amber-bg: #FAEEDA;
-    --amber-text: #633806;
+    --bg: #ffffff; --bg2: #f5f5f3; --bg3: #eeede8;
+    --text: #1a1a18; --text2: #5f5e5a; --text3: #888780;
+    --border: rgba(0,0,0,0.12); --border2: rgba(0,0,0,0.22);
+    --radius-md: 8px; --radius-lg: 12px;
+    --teal: #1D9E75; --teal-dark: #0F6E56; --teal-bg: #E1F5EE; --teal-text: #085041;
+    --amber: #EF9F27; --amber-dark: #854F0B; --amber-bg: #FAEEDA; --amber-text: #633806;
     --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     --font-mono: 'SF Mono', 'Fira Code', monospace;
   }
-
   @media (prefers-color-scheme: dark) {
     :root {
-      --bg: #1c1c1a;
-      --bg2: #252523;
-      --bg3: #2e2e2b;
-      --text: #f0efe9;
-      --text2: #b4b2a9;
-      --text3: #888780;
-      --border: rgba(255,255,255,0.12);
-      --border2: rgba(255,255,255,0.22);
-      --teal-bg: #085041;
-      --teal-text: #9FE1CB;
-      --amber-bg: #412402;
-      --amber-text: #FAC775;
+      --bg: #1c1c1a; --bg2: #252523; --bg3: #2e2e2b;
+      --text: #f0efe9; --text2: #b4b2a9; --text3: #888780;
+      --border: rgba(255,255,255,0.12); --border2: rgba(255,255,255,0.22);
+      --teal-bg: #085041; --teal-text: #9FE1CB;
+      --amber-bg: #412402; --amber-text: #FAC775;
     }
   }
-
-  body {
-    font-family: var(--font);
-    background: var(--bg3);
-    color: var(--text);
-    min-height: 100vh;
-    padding: 2rem 1rem;
-  }
-
+  body { font-family: var(--font); background: var(--bg3); color: var(--text); min-height: 100vh; padding: 2rem 1rem; }
   .container { max-width: 800px; margin: 0 auto; }
-
-  h1 {
-    font-size: 22px;
-    font-weight: 500;
-    margin-bottom: 4px;
-    color: var(--text);
-  }
+  h1 { font-size: 22px; font-weight: 500; margin-bottom: 4px; }
   .subtitle { font-size: 14px; color: var(--text2); margin-bottom: 1.5rem; }
-
+  .section-title { font-size: 12px; font-weight: 500; color: var(--text2); text-transform: uppercase; letter-spacing: .06em; margin: 1.5rem 0 .6rem; }
   .top { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 1.25rem; }
-
   button {
-    padding: 9px 16px;
-    font-size: 14px;
-    font-weight: 500;
-    border-radius: var(--radius-md);
-    border: 0.5px solid var(--border2);
-    background: var(--bg);
-    color: var(--text);
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    transition: background 0.15s;
-    font-family: var(--font);
+    padding: 9px 16px; font-size: 14px; font-weight: 500;
+    border-radius: var(--radius-md); border: 0.5px solid var(--border2);
+    background: var(--bg); color: var(--text); cursor: pointer;
+    display: inline-flex; align-items: center; gap: 6px;
+    transition: background .15s; font-family: var(--font);
   }
   button:hover { background: var(--bg2); }
   button.primary { background: #BA7517; border-color: var(--amber-dark); color: #fff; }
   button.primary:hover { background: var(--amber-dark); }
   button.danger { color: var(--text2); }
-
-  .stats {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
-    gap: 8px;
-    margin-bottom: 1.25rem;
-  }
-  .stat {
-    background: var(--bg2);
-    border-radius: var(--radius-md);
-    padding: 0.6rem 1rem;
-  }
+  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 8px; margin-bottom: 1.25rem; }
+  .stat { background: var(--bg2); border-radius: var(--radius-md); padding: .6rem 1rem; }
   .stat-label { font-size: 12px; color: var(--text2); margin-bottom: 2px; }
-  .stat-val { font-size: 20px; font-weight: 500; color: var(--text); }
-
-  .spotlight {
-    background: var(--bg);
-    border: 0.5px solid var(--border);
-    border-radius: var(--radius-lg);
-    padding: 1.5rem;
-    margin-bottom: 1.25rem;
-    text-align: center;
-  }
+  .stat-val { font-size: 20px; font-weight: 500; }
+  .spotlight { background: var(--bg); border: 0.5px solid var(--border); border-radius: var(--radius-lg); padding: 1.5rem; margin-bottom: 1.25rem; text-align: center; }
   .sp-flag { font-size: 48px; line-height: 1; margin-bottom: 8px; }
-  .sp-name { font-size: 22px; font-weight: 500; color: var(--text); margin-bottom: 4px; }
-  .sp-soup { font-size: 13px; color: var(--amber-dark); font-weight: 500; margin-bottom: 2px; }
-  .sp-region { font-size: 12px; color: var(--text2); margin-bottom: 12px; }
-  .sp-btns { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
-  .sp-btn {
-    padding: 7px 16px;
-    border-radius: var(--radius-md);
-    border: 0.5px solid var(--border2);
-    background: var(--bg);
-    color: var(--text);
-    cursor: pointer;
-    font-size: 13px;
-    transition: all 0.15s;
-    font-family: var(--font);
+  .sp-name { font-size: 22px; font-weight: 500; margin-bottom: 2px; }
+  .sp-region { font-size: 12px; color: var(--text2); margin-bottom: 14px; }
+  .sp-soups { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; }
+  .sp-soup-link {
+    display: inline-block; padding: 6px 14px;
+    border-radius: var(--radius-md); border: 0.5px solid var(--border);
+    background: var(--bg2); color: var(--amber-dark);
+    font-size: 13px; font-weight: 500; text-decoration: none;
+    transition: background .15s, border-color .15s;
   }
+  .sp-soup-link:hover { background: var(--amber-bg); border-color: var(--amber); }
+  .sp-hint { font-size: 11px; color: var(--text3); margin-bottom: 10px; }
+  .sp-btns { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
+  .sp-btn { padding: 7px 16px; border-radius: var(--radius-md); border: 0.5px solid var(--border2); background: var(--bg); color: var(--text); cursor: pointer; font-size: 13px; transition: all .15s; font-family: var(--font); }
   .sp-btn:hover { background: var(--bg2); }
   .sp-btn.made { background: var(--teal); border-color: var(--teal-dark); color: #fff; }
   .sp-btn.made:hover { background: var(--teal-dark); }
   .sp-btn.want { background: var(--amber-bg); border-color: var(--amber); color: var(--amber-text); }
   .sp-btn.want:hover { background: #FAC775; }
-
-  .legend { display: flex; gap: 12px; margin-bottom: 0.75rem; flex-wrap: wrap; }
+  .legend { display: flex; gap: 12px; margin-bottom: .75rem; flex-wrap: wrap; }
   .leg { display: flex; align-items: center; gap: 5px; font-size: 12px; color: var(--text2); }
   .leg-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
-
-  .filters { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 0.75rem; align-items: center; }
+  .filters { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: .75rem; align-items: center; }
   .flabel { font-size: 12px; color: var(--text2); }
-  .fbtn {
-    padding: 4px 11px;
-    border-radius: 20px;
-    border: 0.5px solid var(--border);
-    background: var(--bg);
-    font-size: 12px;
-    color: var(--text2);
-    cursor: pointer;
-    transition: all 0.15s;
-    font-family: var(--font);
-  }
+  .fbtn { padding: 4px 11px; border-radius: 20px; border: 0.5px solid var(--border); background: var(--bg); font-size: 12px; color: var(--text2); cursor: pointer; transition: all .15s; font-family: var(--font); }
   .fbtn.active { background: var(--bg2); color: var(--text); border-color: var(--border2); }
-
-  .search-row { margin-bottom: 0.75rem; }
-  .search-row input {
-    width: 100%;
-    padding: 8px 12px;
-    border-radius: var(--radius-md);
-    border: 0.5px solid var(--border);
-    background: var(--bg);
-    color: var(--text);
-    font-size: 14px;
-    font-family: var(--font);
-    outline: none;
-  }
+  .search-row { margin-bottom: .75rem; }
+  .search-row input { width: 100%; padding: 8px 12px; border-radius: var(--radius-md); border: 0.5px solid var(--border); background: var(--bg); color: var(--text); font-size: 14px; font-family: var(--font); outline: none; }
   .search-row input:focus { border-color: var(--border2); }
-
-  .list-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 5px;
-    margin-bottom: 1.5rem;
-  }
-  .ci {
-    display: flex;
-    align-items: center;
-    gap: 7px;
-    padding: 6px 9px;
-    border-radius: var(--radius-md);
-    border: 0.5px solid var(--border);
-    background: var(--bg);
-    cursor: pointer;
-    font-size: 12px;
-    color: var(--text);
-    transition: all 0.15s;
-  }
+  .list-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 5px; margin-bottom: 1.5rem; }
+  .ci { display: flex; align-items: center; gap: 7px; padding: 6px 9px; border-radius: var(--radius-md); border: 0.5px solid var(--border); background: var(--bg); cursor: pointer; font-size: 12px; color: var(--text); transition: all .15s; }
   .ci:hover { background: var(--bg2); }
   .ci.made { border-color: var(--teal-dark); background: var(--teal-bg); }
   .ci.made .ci-name { color: var(--teal-text); }
@@ -194,43 +90,11 @@
   .ci-badge { font-size: 10px; font-weight: 500; flex-shrink: 0; }
   .ci.made .ci-badge { color: var(--teal-dark); }
   .ci.want .ci-badge { color: var(--amber-dark); }
-
-  .section-title {
-    font-size: 12px;
-    font-weight: 500;
-    color: var(--text2);
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    margin: 1.25rem 0 0.5rem;
-  }
   .export-box { display: flex; gap: 8px; flex-wrap: wrap; align-items: stretch; }
-  .export-code {
-    flex: 1;
-    min-width: 0;
-    padding: 8px 10px;
-    border-radius: var(--radius-md);
-    border: 0.5px solid var(--border);
-    background: var(--bg2);
-    font-size: 11px;
-    color: var(--text2);
-    font-family: var(--font-mono);
-    word-break: break-all;
-    line-height: 1.5;
-  }
+  .export-code { flex: 1; min-width: 0; padding: 8px 10px; border-radius: var(--radius-md); border: 0.5px solid var(--border); background: var(--bg2); font-size: 11px; color: var(--text2); font-family: var(--font-mono); word-break: break-all; line-height: 1.5; }
   .import-row { display: flex; gap: 8px; margin-top: 8px; flex-wrap: wrap; }
-  .import-row input {
-    flex: 1;
-    padding: 7px 10px;
-    border-radius: var(--radius-md);
-    border: 0.5px solid var(--border);
-    background: var(--bg);
-    color: var(--text);
-    font-size: 12px;
-    font-family: var(--font-mono);
-    outline: none;
-  }
+  .import-row input { flex: 1; padding: 7px 10px; border-radius: var(--radius-md); border: 0.5px solid var(--border); background: var(--bg); color: var(--text); font-size: 12px; font-family: var(--font-mono); outline: none; }
   .feedback { font-size: 12px; margin-top: 6px; min-height: 16px; }
-
   footer { margin-top: 2rem; font-size: 12px; color: var(--text3); text-align: center; }
 </style>
 </head>
@@ -252,11 +116,11 @@
     <div class="stat"><div class="stat-label">% cooked</div><div class="stat-val" id="stat-pct">0%</div></div>
   </div>
 
-  <div class="spotlight" id="spotlight">
+  <div class="spotlight">
     <div class="sp-flag" id="sp-flag">🍲</div>
     <div class="sp-name" id="sp-name">Hit "Random soup" to start</div>
-    <div class="sp-soup" id="sp-soup"></div>
     <div class="sp-region" id="sp-region"></div>
+    <div class="sp-soups" id="sp-soups"></div>
     <div class="sp-btns" id="sp-btns" style="display:none">
       <button class="sp-btn" id="sp-made" onclick="setStatus('made')">I've made this</button>
       <button class="sp-btn" id="sp-want" onclick="setStatus('want')">Want to try</button>
@@ -284,10 +148,7 @@
     <button class="fbtn" onclick="setFilter('status','none')" id="sfbtn-none">Untried</button>
   </div>
 
-  <div class="search-row">
-    <input type="text" id="search" placeholder="Search countries or soups..." oninput="renderList()">
-  </div>
-
+  <div class="search-row"><input type="text" id="search" placeholder="Search countries or soups..." oninput="renderList()"></div>
   <div id="list" class="list-grid"></div>
 
   <div class="section-title">Export / import your progress</div>
@@ -300,240 +161,234 @@
     <button onclick="doImport()"><i class="ti ti-download"></i> Load</button>
   </div>
   <div class="feedback" id="feedback"></div>
-
   <footer>Data saves to your browser. Use the export code to share or move progress.</footer>
 </div>
 
 <script>
+// s = primary soup label (for list), soups = up to 5 verified soups for spotlight
 const COUNTRIES = [
-  {n:"Afghanistan",f:"🇦🇫",r:"Asia",s:"Shorwa (lamb & vegetable soup)"},
-  {n:"Albania",f:"🇦🇱",r:"Europe",s:"Supë me mish (meat soup)"},
-  {n:"Algeria",f:"🇩🇿",r:"Africa",s:"Harira (tomato & chickpea)"},
-  {n:"Andorra",f:"🇦🇩",r:"Europe",s:"Escudella (meat & pasta stew)"},
-  {n:"Angola",f:"🇦🇴",r:"Africa",s:"Calulu (fish & vegetable soup)"},
-  {n:"Antigua and Barbuda",f:"🇦🇬",r:"Americas",s:"Fungee & pepperpot soup"},
-  {n:"Argentina",f:"🇦🇷",r:"Americas",s:"Locro (corn & meat stew)"},
-  {n:"Armenia",f:"🇦🇲",r:"Asia",s:"Spas (yogurt & wheat soup)"},
-  {n:"Australia",f:"🇦🇺",r:"Oceania",s:"Pumpkin soup"},
-  {n:"Austria",f:"🇦🇹",r:"Europe",s:"Frittatensuppe (pancake strip soup)"},
-  {n:"Azerbaijan",f:"🇦🇿",r:"Asia",s:"Piti (lamb & chickpea soup)"},
-  {n:"Bahamas",f:"🇧🇸",r:"Americas",s:"Conch chowder"},
-  {n:"Bahrain",f:"🇧🇭",r:"Asia",s:"Harees (wheat & meat porridge)"},
-  {n:"Bangladesh",f:"🇧🇩",r:"Asia",s:"Shorshey ilish (mustard hilsa soup)"},
-  {n:"Barbados",f:"🇧🇧",r:"Americas",s:"Cou-cou & flying fish soup"},
-  {n:"Belarus",f:"🇧🇾",r:"Europe",s:"Khaladnik (cold beet soup)"},
-  {n:"Belgium",f:"🇧🇪",r:"Europe",s:"Waterzooi (chicken or fish stew)"},
-  {n:"Belize",f:"🇧🇿",r:"Americas",s:"Boil-up (pork & vegetable soup)"},
-  {n:"Benin",f:"🇧🇯",r:"Africa",s:"Amiwo (tomato cornmeal soup)"},
-  {n:"Bhutan",f:"🇧🇹",r:"Asia",s:"Ema datshi (chili & cheese soup)"},
-  {n:"Bolivia",f:"🇧🇴",r:"Americas",s:"Sopa de maní (peanut soup)"},
-  {n:"Bosnia and Herzegovina",f:"🇧🇦",r:"Europe",s:"Begova čorba (chicken & vegetable)"},
-  {n:"Botswana",f:"🇧🇼",r:"Africa",s:"Seswaa stew"},
-  {n:"Brazil",f:"🇧🇷",r:"Americas",s:"Caldo verde (kale & sausage soup)"},
-  {n:"Brunei",f:"🇧🇳",r:"Asia",s:"Ambuyat soup"},
-  {n:"Bulgaria",f:"🇧🇬",r:"Europe",s:"Tarator (cold cucumber & yogurt)"},
-  {n:"Burkina Faso",f:"🇧🇫",r:"Africa",s:"Tô soup (millet & okra)"},
-  {n:"Burundi",f:"🇧🇮",r:"Africa",s:"Bean & plantain soup"},
-  {n:"Cabo Verde",f:"🇨🇻",r:"Africa",s:"Cachupa (corn & bean stew)"},
-  {n:"Cambodia",f:"🇰🇭",r:"Asia",s:"Samlor korko (green vegetable soup)"},
-  {n:"Cameroon",f:"🇨🇲",r:"Africa",s:"Ndolé (bitterleaf & peanut soup)"},
-  {n:"Canada",f:"🇨🇦",r:"Americas",s:"French onion soup (Quebec style)"},
-  {n:"Central African Republic",f:"🇨🇫",r:"Africa",s:"Kanda (peanut & meat soup)"},
-  {n:"Chad",f:"🇹🇩",r:"Africa",s:"Jarret de boeuf (beef shin stew)"},
-  {n:"Chile",f:"🇨🇱",r:"Americas",s:"Cazuela (meat & vegetable soup)"},
-  {n:"China",f:"🇨🇳",r:"Asia",s:"Hot & sour soup"},
-  {n:"Colombia",f:"🇨🇴",r:"Americas",s:"Ajiaco (potato & chicken soup)"},
-  {n:"Comoros",f:"🇰🇲",r:"Africa",s:"Romazava (meat & green leaf soup)"},
-  {n:"Congo, Democratic Republic of the",f:"🇨🇩",r:"Africa",s:"Moambe (palm nut soup)"},
-  {n:"Congo, Republic of the",f:"🇨🇬",r:"Africa",s:"Saka-saka (cassava leaf soup)"},
-  {n:"Costa Rica",f:"🇨🇷",r:"Americas",s:"Olla de carne (beef & vegetable)"},
-  {n:"Croatia",f:"🇭🇷",r:"Europe",s:"Brodet (fish stew)"},
-  {n:"Cuba",f:"🇨🇺",r:"Americas",s:"Ajiaco criollo (mixed meat soup)"},
-  {n:"Cyprus",f:"🇨🇾",r:"Europe",s:"Trahanas (fermented wheat soup)"},
-  {n:"Czech Republic",f:"🇨🇿",r:"Europe",s:"Svíčková (beef in cream soup)"},
-  {n:"East Timor",f:"🇹🇱",r:"Asia",s:"Saboko (corn & pork soup)"},
-  {n:"Ecuador",f:"🇪🇨",r:"Americas",s:"Locro de papa (potato cheese soup)"},
-  {n:"Egypt",f:"🇪🇬",r:"Africa",s:"Molokhia (jute leaf soup)"},
-  {n:"El Salvador",f:"🇸🇻",r:"Americas",s:"Sopa de res (beef vegetable soup)"},
-  {n:"Equatorial Guinea",f:"🇬🇶",r:"Africa",s:"Sopa boba (mixed meat soup)"},
-  {n:"Eritrea",f:"🇪🇷",r:"Africa",s:"Zigni (spiced beef stew)"},
-  {n:"Estonia",f:"🇪🇪",r:"Europe",s:"Kama soup (barley & rye)"},
-  {n:"Eswatini",f:"🇸🇿",r:"Africa",s:"Sishwala (maize porridge soup)"},
-  {n:"Ethiopia",f:"🇪🇹",r:"Africa",s:"Shiro (chickpea flour soup)"},
-  {n:"Gabon",f:"🇬🇦",r:"Africa",s:"Poulet Nyembwe (palm nut stew)"},
-  {n:"Gambia",f:"🇬🇲",r:"Africa",s:"Domoda (peanut stew)"},
-  {n:"Georgia",f:"🇬🇪",r:"Asia",s:"Kharcho (walnut & beef soup)"},
-  {n:"Germany",f:"🇩🇪",r:"Europe",s:"Kartoffelsuppe (potato soup)"},
-  {n:"Ghana",f:"🇬🇭",r:"Africa",s:"Groundnut soup"},
-  {n:"Greece",f:"🇬🇷",r:"Europe",s:"Avgolemono (lemon egg soup)"},
-  {n:"Grenada",f:"🇬🇩",r:"Americas",s:"Oil down (breadfruit stew)"},
-  {n:"Guatemala",f:"🇬🇹",r:"Americas",s:"Pepián (seed & chili stew)"},
-  {n:"Guinea",f:"🇬🇳",r:"Africa",s:"Soupe kandia (palm oil soup)"},
-  {n:"Guinea-Bissau",f:"🇬🇼",r:"Africa",s:"Caldo de mancarra (peanut soup)"},
-  {n:"Guyana",f:"🇬🇾",r:"Americas",s:"Pepperpot (cassareep beef stew)"},
-  {n:"Haiti",f:"🇭🇹",r:"Americas",s:"Soup joumou (pumpkin beef soup)"},
-  {n:"Honduras",f:"🇭🇳",r:"Americas",s:"Sopa de caracol (conch soup)"},
-  {n:"Hungary",f:"🇭🇺",r:"Europe",s:"Gulyás (goulash soup)"},
-  {n:"Iceland",f:"🇮🇸",r:"Europe",s:"Kjötsúpa (lamb vegetable soup)"},
-  {n:"India",f:"🇮🇳",r:"Asia",s:"Mulligatawny (spiced lentil soup)"},
-  {n:"Indonesia",f:"🇮🇩",r:"Asia",s:"Soto ayam (turmeric chicken soup)"},
-  {n:"Iran",f:"🇮🇷",r:"Asia",s:"Ash reshteh (herb & noodle soup)"},
-  {n:"Iraq",f:"🇮🇶",r:"Asia",s:"Margat bamia (okra lamb soup)"},
-  {n:"Ireland",f:"🇮🇪",r:"Europe",s:"Irish stew (lamb & potato)"},
-  {n:"Israel",f:"🇮🇱",r:"Asia",s:"Schmaltz chicken soup with matzo"},
-  {n:"Italy",f:"🇮🇹",r:"Europe",s:"Ribollita (Tuscan bread soup)"},
-  {n:"Ivory Coast",f:"🇨🇮",r:"Africa",s:"Kedjenou (chicken clay-pot stew)"},
-  {n:"Jamaica",f:"🇯🇲",r:"Americas",s:"Pepper pot soup"},
-  {n:"Japan",f:"🇯🇵",r:"Asia",s:"Miso shiru (miso soup)"},
-  {n:"Jordan",f:"🇯🇴",r:"Asia",s:"Mansaf broth (lamb yogurt soup)"},
-  {n:"Kazakhstan",f:"🇰🇿",r:"Asia",s:"Shurpa (lamb vegetable soup)"},
-  {n:"Kenya",f:"🇰🇪",r:"Africa",s:"Mukimo (pea & potato mash soup)"},
-  {n:"Kiribati",f:"🇰🇮",r:"Oceania",s:"Coconut fish soup"},
-  {n:"Korea, North",f:"🇰🇵",r:"Asia",s:"Onban (chicken rice soup)"},
-  {n:"Korea, South",f:"🇰🇷",r:"Asia",s:"Doenjang jjigae (soybean paste stew)"},
-  {n:"Kuwait",f:"🇰🇼",r:"Asia",s:"Murabyan (rice & prawn soup)"},
-  {n:"Kyrgyzstan",f:"🇰🇬",r:"Asia",s:"Shorpo (lamb & potato soup)"},
-  {n:"Laos",f:"🇱🇦",r:"Asia",s:"Khao piak sen (rice noodle soup)"},
-  {n:"Latvia",f:"🇱🇻",r:"Europe",s:"Skābeņu zupa (sorrel soup)"},
-  {n:"Lebanon",f:"🇱🇧",r:"Asia",s:"Adas bil hamod (lemon lentil soup)"},
-  {n:"Lesotho",f:"🇱🇸",r:"Africa",s:"Moraba-raba (bean stew)"},
-  {n:"Liberia",f:"🇱🇷",r:"Africa",s:"Palm butter soup"},
-  {n:"Libya",f:"🇱🇾",r:"Africa",s:"Sharba (spiced lamb soup)"},
-  {n:"Liechtenstein",f:"🇱🇮",r:"Europe",s:"Käseknöpfle soup"},
-  {n:"Lithuania",f:"🇱🇹",r:"Europe",s:"Šaltibarščiai (cold beet soup)"},
-  {n:"Luxembourg",f:"🇱🇺",r:"Europe",s:"Bouneschlupp (green bean soup)"},
-  {n:"Madagascar",f:"🇲🇬",r:"Africa",s:"Romazava (beef & greens soup)"},
-  {n:"Malawi",f:"🇲🇼",r:"Africa",s:"Nsima with ndiwo (bean soup)"},
-  {n:"Malaysia",f:"🇲🇾",r:"Asia",s:"Laksa (coconut curry noodle soup)"},
-  {n:"Maldives",f:"🇲🇻",r:"Asia",s:"Garudhiya (tuna broth)"},
-  {n:"Mali",f:"🇲🇱",r:"Africa",s:"Tiguadege Na (peanut stew)"},
-  {n:"Malta",f:"🇲🇹",r:"Europe",s:"Minestra (vegetable soup)"},
-  {n:"Marshall Islands",f:"🇲🇭",r:"Oceania",s:"Coconut breadfruit soup"},
-  {n:"Mauritania",f:"🇲🇷",r:"Africa",s:"Thiéboudienne (fish & rice stew)"},
-  {n:"Mauritius",f:"🇲🇺",r:"Africa",s:"Dholl puri soup"},
-  {n:"Mexico",f:"🇲🇽",r:"Americas",s:"Pozole (hominy & pork soup)"},
-  {n:"Micronesia",f:"🇫🇲",r:"Oceania",s:"Taro & coconut soup"},
-  {n:"Moldova",f:"🇲🇩",r:"Europe",s:"Zeamă (chicken noodle soup)"},
-  {n:"Monaco",f:"🇲🇨",r:"Europe",s:"Barbagiuan soup"},
-  {n:"Mongolia",f:"🇲🇳",r:"Asia",s:"Tsuivan (noodle meat soup)"},
-  {n:"Montenegro",f:"🇲🇪",r:"Europe",s:"Riblja čorba (fish soup)"},
-  {n:"Morocco",f:"🇲🇦",r:"Africa",s:"Harira (tomato, lentil & chickpea)"},
-  {n:"Mozambique",f:"🇲🇿",r:"Africa",s:"Matapa (cassava leaf & coconut)"},
-  {n:"Myanmar",f:"🇲🇲",r:"Asia",s:"Mohinga (fish noodle soup)"},
-  {n:"Namibia",f:"🇳🇦",r:"Africa",s:"Oshifima (maize porridge soup)"},
-  {n:"Nauru",f:"🇳🇷",r:"Oceania",s:"Coconut fish broth"},
-  {n:"Nepal",f:"🇳🇵",r:"Asia",s:"Dal bhat (lentil soup)"},
-  {n:"Netherlands",f:"🇳🇱",r:"Europe",s:"Erwtensoep (split pea soup)"},
-  {n:"New Zealand",f:"🇳🇿",r:"Oceania",s:"Rewena bread & lamb soup"},
-  {n:"Nicaragua",f:"🇳🇮",r:"Americas",s:"Sopa de albóndigas (meatball soup)"},
-  {n:"Niger",f:"🇳🇪",r:"Africa",s:"Millet & goat soup"},
-  {n:"Nigeria",f:"🇳🇬",r:"Africa",s:"Egusi (melon seed soup)"},
-  {n:"North Macedonia",f:"🇲🇰",r:"Europe",s:"Tavče gravče (bean stew)"},
-  {n:"Norway",f:"🇳🇴",r:"Europe",s:"Fiskesuppe (creamy fish soup)"},
-  {n:"Oman",f:"🇴🇲",r:"Asia",s:"Shuwa (slow-cooked lamb broth)"},
-  {n:"Pakistan",f:"🇵🇰",r:"Asia",s:"Nihari (slow-cooked beef soup)"},
-  {n:"Palau",f:"🇵🇼",r:"Oceania",s:"Taro & fish soup"},
-  {n:"Panama",f:"🇵🇦",r:"Americas",s:"Sancocho (chicken & yam soup)"},
-  {n:"Papua New Guinea",f:"🇵🇬",r:"Oceania",s:"Mumu (earth-oven vegetable stew)"},
-  {n:"Paraguay",f:"🇵🇾",r:"Americas",s:"Sopa paraguaya (cornbread soup)"},
-  {n:"Peru",f:"🇵🇪",r:"Americas",s:"Aguadito de pollo (cilantro chicken)"},
-  {n:"Philippines",f:"🇵🇭",r:"Asia",s:"Sinigang (tamarind sour soup)"},
-  {n:"Poland",f:"🇵🇱",r:"Europe",s:"Żurek (sour rye soup)"},
-  {n:"Portugal",f:"🇵🇹",r:"Europe",s:"Caldo verde (kale & potato)"},
-  {n:"Qatar",f:"🇶🇦",r:"Asia",s:"Jareesh (crushed wheat soup)"},
-  {n:"Romania",f:"🇷🇴",r:"Europe",s:"Ciorbă de burtă (tripe soup)"},
-  {n:"Russia",f:"🇷🇺",r:"Europe",s:"Borscht (beet soup)"},
-  {n:"Rwanda",f:"🇷🇼",r:"Africa",s:"Isombe (cassava leaf stew)"},
-  {n:"Saint Kitts and Nevis",f:"🇰🇳",r:"Americas",s:"Pelau soup"},
-  {n:"Saint Lucia",f:"🇱🇨",r:"Americas",s:"Callaloo soup"},
-  {n:"Saint Vincent and the Grenadines",f:"🇻🇨",r:"Americas",s:"Breadfruit soup"},
-  {n:"Samoa",f:"🇼🇸",r:"Oceania",s:"Palusami (coconut cream soup)"},
-  {n:"San Marino",f:"🇸🇲",r:"Europe",s:"Zuppa di fagioli (bean soup)"},
-  {n:"São Tomé and Príncipe",f:"🇸🇹",r:"Africa",s:"Calulu de peixe (fish stew)"},
-  {n:"Saudi Arabia",f:"🇸🇦",r:"Asia",s:"Harees (wheat & chicken porridge)"},
-  {n:"Senegal",f:"🇸🇳",r:"Africa",s:"Thiébou yapp (rice & lamb soup)"},
-  {n:"Serbia",f:"🇷🇸",r:"Europe",s:"Čorba od povrća (vegetable soup)"},
-  {n:"Seychelles",f:"🇸🇨",r:"Africa",s:"Ladob (coconut & plantain soup)"},
-  {n:"Sierra Leone",f:"🇸🇱",r:"Africa",s:"Plasas (groundnut leaf soup)"},
-  {n:"Singapore",f:"🇸🇬",r:"Asia",s:"Bak kut teh (pork rib soup)"},
-  {n:"Slovakia",f:"🇸🇰",r:"Europe",s:"Kapustnica (sauerkraut soup)"},
-  {n:"Slovenia",f:"🇸🇮",r:"Europe",s:"Ričet (barley & bean soup)"},
-  {n:"Solomon Islands",f:"🇸🇧",r:"Oceania",s:"Coconut fish soup"},
-  {n:"Somalia",f:"🇸🇴",r:"Africa",s:"Suqaar iyo baasto (pasta & meat)"},
-  {n:"South Africa",f:"🇿🇦",r:"Africa",s:"Potjiekos (cast-iron stew)"},
-  {n:"South Sudan",f:"🇸🇸",r:"Africa",s:"Ful medames (fava bean soup)"},
-  {n:"Spain",f:"🇪🇸",r:"Europe",s:"Gazpacho (cold tomato soup)"},
-  {n:"Sri Lanka",f:"🇱🇰",r:"Asia",s:"Kola kanda (herbal rice soup)"},
-  {n:"Sudan",f:"🇸🇩",r:"Africa",s:"Ful (fava bean stew)"},
-  {n:"Suriname",f:"🇸🇷",r:"Americas",s:"Peanut soup"},
-  {n:"Sweden",f:"🇸🇪",r:"Europe",s:"Ärtsoppa (yellow pea soup)"},
-  {n:"Switzerland",f:"🇨🇭",r:"Europe",s:"Busecca (tripe & bean soup)"},
-  {n:"Syria",f:"🇸🇾",r:"Asia",s:"Fatte (chickpea & bread soup)"},
-  {n:"Taiwan",f:"🇹🇼",r:"Asia",s:"Oyster vermicelli soup"},
-  {n:"Tajikistan",f:"🇹🇯",r:"Asia",s:"Mastoba (rice & yogurt soup)"},
-  {n:"Tanzania",f:"🇹🇿",r:"Africa",s:"Mchuzi wa samaki (fish coconut curry)"},
-  {n:"Thailand",f:"🇹🇭",r:"Asia",s:"Tom yum goong (spicy prawn soup)"},
-  {n:"Togo",f:"🇹🇬",r:"Africa",s:"Gboma dessi (spinach stew)"},
-  {n:"Tonga",f:"🇹🇴",r:"Oceania",s:"Lu pulu (coconut cream & beef)"},
-  {n:"Trinidad and Tobago",f:"🇹🇹",r:"Americas",s:"Callaloo (dasheen leaf soup)"},
-  {n:"Tunisia",f:"🇹🇳",r:"Africa",s:"Lablabi (chickpea harissa soup)"},
-  {n:"Turkey",f:"🇹🇷",r:"Asia",s:"Mercimek çorbası (red lentil soup)"},
-  {n:"Turkmenistan",f:"🇹🇲",r:"Asia",s:"Dograma (meat & bread soup)"},
-  {n:"Tuvalu",f:"🇹🇻",r:"Oceania",s:"Coconut crab soup"},
-  {n:"Uganda",f:"🇺🇬",r:"Africa",s:"Groundnut stew"},
-  {n:"Ukraine",f:"🇺🇦",r:"Europe",s:"Borscht (beet & cabbage soup)"},
-  {n:"United Arab Emirates",f:"🇦🇪",r:"Asia",s:"Harees (wheat & meat porridge)"},
-  {n:"United Kingdom",f:"🇬🇧",r:"Europe",s:"Cock-a-leekie (chicken & leek)"},
-  {n:"United States",f:"🇺🇸",r:"Americas",s:"New England clam chowder"},
-  {n:"Uruguay",f:"🇺🇾",r:"Americas",s:"Puchero (boiled meat & veg soup)"},
-  {n:"Uzbekistan",f:"🇺🇿",r:"Asia",s:"Mastava (rice & lamb soup)"},
-  {n:"Vanuatu",f:"🇻🇺",r:"Oceania",s:"Lap lap (yam & coconut soup)"},
-  {n:"Vatican City",f:"🇻🇦",r:"Europe",s:"Stracciatella (egg drop soup)"},
-  {n:"Venezuela",f:"🇻🇪",r:"Americas",s:"Sancocho (mixed meat & tuber soup)"},
-  {n:"Vietnam",f:"🇻🇳",r:"Asia",s:"Phở (beef noodle soup)"},
-  {n:"Yemen",f:"🇾🇪",r:"Asia",s:"Fahsa (lamb & fenugreek stew)"},
-  {n:"Zambia",f:"🇿🇲",r:"Africa",s:"Nshima & relish soup"},
-  {n:"Zimbabwe",f:"🇿🇼",r:"Africa",s:"Sadza & beef stew"}
+  {n:"Afghanistan",f:"🇦🇫",r:"Asia",s:"Shorwa",soups:["Shorwa","Mastawa","Aush (noodle soup)","Maush (bean soup)","Quroot soup"]},
+  {n:"Albania",f:"🇦🇱",r:"Europe",s:"Supë me mish",soups:["Supë me mish","Tavë kosi soup","Çorba","Supë peshku (fish soup)","Bean soup"]},
+  {n:"Algeria",f:"🇩🇿",r:"Africa",s:"Harira",soups:["Harira","Chorba frik","Jari (lamb soup)","Lentil soup","Vegetable chorba"]},
+  {n:"Andorra",f:"🇦🇩",r:"Europe",s:"Escudella",soups:["Escudella","Trinxat soup","Vegetable broth"]},
+  {n:"Angola",f:"🇦🇴",r:"Africa",s:"Calulu",soups:["Calulu","Moamba de galinha soup","Funge broth","Bean soup"]},
+  {n:"Antigua and Barbuda",f:"🇦🇬",r:"Americas",s:"Pepperpot soup",soups:["Pepperpot soup","Fish broth","Dumplin soup","Corn soup"]},
+  {n:"Argentina",f:"🇦🇷",r:"Americas",s:"Locro",soups:["Locro","Puchero","Sopa de verduras","Carbonada","Cazuela de vino"]},
+  {n:"Armenia",f:"🇦🇲",r:"Asia",s:"Spas",soups:["Spas","Bozbash","Khash","Khashlama broth","Matzoon soup"]},
+  {n:"Australia",f:"🇦🇺",r:"Oceania",s:"Pumpkin soup",soups:["Pumpkin soup","Chicken and corn soup","Minestrone","Laksa","Potato and leek soup"]},
+  {n:"Austria",f:"🇦🇹",r:"Europe",s:"Frittatensuppe",soups:["Frittatensuppe","Gulaschsuppe","Leberknödelsuppe","Tafelspitzsuppe","Griessnockerlsuppe"]},
+  {n:"Azerbaijan",f:"🇦🇿",r:"Asia",s:"Piti",soups:["Piti","Dovga","Dushbara","Ovdukh","Kufta bozbash"]},
+  {n:"Bahamas",f:"🇧🇸",r:"Americas",s:"Conch chowder",soups:["Conch chowder","Chicken souse","Pea soup","Fish soup"]},
+  {n:"Bahrain",f:"🇧🇭",r:"Asia",s:"Harees",soups:["Harees","Maraq","Lentil soup","Chicken soup","Tomato soup"]},
+  {n:"Bangladesh",f:"🇧🇩",r:"Asia",s:"Murighonto",soups:["Murighonto","Lau shak soup","Dal (lentil soup)","Chicken shorba","Fish head soup"]},
+  {n:"Barbados",f:"🇧🇧",r:"Americas",s:"Pudding and souse",soups:["Pudding and souse","Fish broth","Pumpkin soup","Black-eyed pea soup"]},
+  {n:"Belarus",f:"🇧🇾",r:"Europe",s:"Khaladnik",soups:["Khaladnik","Borscht","Zatirka","Kapustnik","Mushroom soup"]},
+  {n:"Belgium",f:"🇧🇪",r:"Europe",s:"Waterzooi",soups:["Waterzooi","Soupe à l'oignon","Erwtensoep","Tomatensoep","Groentesoep"]},
+  {n:"Belize",f:"🇧🇿",r:"Americas",s:"Boil-up",soups:["Boil-up","Chicken soup","Conch soup","Bean soup","Rice porridge"]},
+  {n:"Benin",f:"🇧🇯",r:"Africa",s:"Amiwo",soups:["Amiwo","Groundnut soup","Palm nut soup","Okra soup","Bean soup"]},
+  {n:"Bhutan",f:"🇧🇹",r:"Asia",s:"Ema datshi",soups:["Ema datshi","Phaksha paa soup","Jasha maru broth","Buckwheat noodle soup","Red rice congee"]},
+  {n:"Bolivia",f:"🇧🇴",r:"Americas",s:"Sopa de maní",soups:["Sopa de maní","Chairo","Lawa","Sopa de quinoa","Fricasé"]},
+  {n:"Bosnia and Herzegovina",f:"🇧🇦",r:"Europe",s:"Begova čorba",soups:["Begova čorba","Grah (bean soup)","Čorba od povrća","Lamb soup","Fish soup"]},
+  {n:"Botswana",f:"🇧🇼",r:"Africa",s:"Seswaa broth",soups:["Seswaa broth","Sorghum porridge soup","Bean soup","Morogo broth"]},
+  {n:"Brazil",f:"🇧🇷",r:"Americas",s:"Caldo verde",soups:["Caldo verde","Canja de galinha","Feijoada broth","Caldeirada","Sopa de mandioca"]},
+  {n:"Brunei",f:"🇧🇳",r:"Asia",s:"Soto",soups:["Soto","Laksa","Sup tulang (bone soup)","Noodle soup","Prawn soup"]},
+  {n:"Bulgaria",f:"🇧🇬",r:"Europe",s:"Tarator",soups:["Tarator","Bob chorba (bean soup)","Shkembe chorba (tripe soup)","Zeleva chorba (cabbage soup)","Ribena chorba (fish soup)"]},
+  {n:"Burkina Faso",f:"🇧🇫",r:"Africa",s:"Tô soup",soups:["Tô soup","Groundnut soup","Okra soup","Bean soup","Baobab leaf soup"]},
+  {n:"Burundi",f:"🇧🇮",r:"Africa",s:"Bean soup",soups:["Bean soup","Plantain soup","Isombe broth","Sorghum porridge soup"]},
+  {n:"Cabo Verde",f:"🇨🇻",r:"Africa",s:"Cachupa",soups:["Cachupa","Caldo de peixe","Sopas do Espírito Santo","Vegetable soup"]},
+  {n:"Cambodia",f:"🇰🇭",r:"Asia",s:"Samlor korko",soups:["Samlor korko","Samlor machu","Kuy teav (noodle soup)","Borbor (rice porridge)","Samlor kakoh"]},
+  {n:"Cameroon",f:"🇨🇲",r:"Africa",s:"Ndolé",soups:["Ndolé","Egusi soup","Palm nut soup","Pepper soup","Eru soup"]},
+  {n:"Canada",f:"🇨🇦",r:"Americas",s:"Pea soup",soups:["Pea soup","Clam chowder","Beef barley soup","Chicken noodle soup","Wild rice soup"]},
+  {n:"Central African Republic",f:"🇨🇫",r:"Africa",s:"Kanda",soups:["Kanda","Groundnut soup","Okra soup","Cassava leaf soup"]},
+  {n:"Chad",f:"🇹🇩",r:"Africa",s:"Jarret de boeuf",soups:["Jarret de boeuf","Millet soup","Peanut soup","Lamb broth"]},
+  {n:"Chile",f:"🇨🇱",r:"Americas",s:"Cazuela",soups:["Cazuela","Caldillo de congrio","Carbonada","Sopa de mariscos","Porotos granados"]},
+  {n:"China",f:"🇨🇳",r:"Asia",s:"Hot & sour soup",soups:["Hot & sour soup","Wonton soup","Egg drop soup","Winter melon soup","Buddha jumps over the wall"]},
+  {n:"Colombia",f:"🇨🇴",r:"Americas",s:"Ajiaco",soups:["Ajiaco","Sancocho","Sopa de mondongo","Cuchuco de trigo","Changua"]},
+  {n:"Comoros",f:"🇰🇲",r:"Africa",s:"Romazava",soups:["Romazava","Fish soup","Coconut broth","Lentil soup"]},
+  {n:"Congo, Democratic Republic of the",f:"🇨🇩",r:"Africa",s:"Moambe",soups:["Moambe","Saka-saka","Pepper soup","Fish soup","Bean soup"]},
+  {n:"Congo, Republic of the",f:"🇨🇬",r:"Africa",s:"Saka-saka",soups:["Saka-saka","Palm nut soup","Groundnut soup","Fish broth"]},
+  {n:"Costa Rica",f:"🇨🇷",r:"Americas",s:"Olla de carne",soups:["Olla de carne","Sopa negra","Sopa de mondongo","Pozol","Fish soup"]},
+  {n:"Croatia",f:"🇭🇷",r:"Europe",s:"Brodet",soups:["Brodet","Maneštra","Grah (bean soup)","Riblja juha (fish soup)","Pileća juha (chicken soup)"]},
+  {n:"Cuba",f:"🇨🇺",r:"Americas",s:"Ajiaco criollo",soups:["Ajiaco criollo","Sopa de frijoles negros","Caldo gallego","Potaje de garbanzos","Sopa de plátano"]},
+  {n:"Cyprus",f:"🇨🇾",r:"Europe",s:"Trahanas",soups:["Trahanas","Avgolemono","Kakavia (fish soup)","Louvi (black-eyed bean soup)","Vegetable soup"]},
+  {n:"Czech Republic",f:"🇨🇿",r:"Europe",s:"Svíčková",soups:["Svíčková","Kulajda","Česnečka (garlic soup)","Bramborová polévka (potato soup)","Hovězí vývar (beef broth)"]},
+  {n:"East Timor",f:"🇹🇱",r:"Asia",s:"Saboko",soups:["Saboko","Fish soup","Sweet potato soup","Corn soup"]},
+  {n:"Ecuador",f:"🇪🇨",r:"Americas",s:"Locro de papa",soups:["Locro de papa","Fanesca","Sopa de bolas de verde","Caldo de patas","Seco broth"]},
+  {n:"Egypt",f:"🇪🇬",r:"Africa",s:"Molokhia",soups:["Molokhia","Ful medames soup","Lentil soup","Harira","Hawawshi broth"]},
+  {n:"El Salvador",f:"🇸🇻",r:"Americas",s:"Sopa de res",soups:["Sopa de res","Sopa de pata","Sopa de frijoles","Sopa de mariscos","Chicken soup"]},
+  {n:"Equatorial Guinea",f:"🇬🇶",r:"Africa",s:"Sopa de pescado",soups:["Sopa de pescado","Palm nut soup","Groundnut soup","Chicken soup"]},
+  {n:"Eritrea",f:"🇪🇷",r:"Africa",s:"Zigni",soups:["Zigni","Shiro","Lentil soup","Vegetable broth","Lamb soup"]},
+  {n:"Estonia",f:"🇪🇪",r:"Europe",s:"Hapukapsasupp",soups:["Hapukapsasupp (sauerkraut soup)","Hernesupp (pea soup)","Kalaroog (fish soup)","Seenesupp (mushroom soup)","Kartsupp (potato soup)"]},
+  {n:"Eswatini",f:"🇸🇿",r:"Africa",s:"Sishwala",soups:["Sishwala","Bean soup","Pumpkin soup","Groundnut soup"]},
+  {n:"Ethiopia",f:"🇪🇹",r:"Africa",s:"Shiro",soups:["Shiro","Misir wot (lentil soup)","Doro wot broth","Gomen (greens soup)","Ye'abesha gomen"]},
+  {n:"Gabon",f:"🇬🇦",r:"Africa",s:"Poulet Nyembwe",soups:["Poulet Nyembwe","Saka-saka","Fish soup","Groundnut soup"]},
+  {n:"Gambia",f:"🇬🇲",r:"Africa",s:"Domoda",soups:["Domoda","Benachin broth","Superkanja (okra soup)","Fish soup","Groundnut soup"]},
+  {n:"Georgia",f:"🇬🇪",r:"Asia",s:"Kharcho",soups:["Kharcho","Chikhirtma","Shechamandy","Lobiani broth","Shkmeruli broth"]},
+  {n:"Germany",f:"🇩🇪",r:"Europe",s:"Kartoffelsuppe",soups:["Kartoffelsuppe (potato soup)","Erbsensuppe (pea soup)","Linsensuppe (lentil soup)","Gulaschsuppe","Leberknödelsuppe"]},
+  {n:"Ghana",f:"🇬🇭",r:"Africa",s:"Groundnut soup",soups:["Groundnut soup","Light soup","Palm nut soup","Kontomire stew","Okra soup"]},
+  {n:"Greece",f:"🇬🇷",r:"Europe",s:"Avgolemono",soups:["Avgolemono","Fasolada (bean soup)","Psarosoupa (fish soup)","Kakavia","Trahanas"]},
+  {n:"Grenada",f:"🇬🇩",r:"Americas",s:"Oil down",soups:["Oil down","Callaloo soup","Fish broth","Pumpkin soup"]},
+  {n:"Guatemala",f:"🇬🇹",r:"Americas",s:"Pepián",soups:["Pepián","Jocón","Caldo de res","Sopa de mariscos","Chicken soup"]},
+  {n:"Guinea",f:"🇬🇳",r:"Africa",s:"Soupe kandia",soups:["Soupe kandia","Groundnut soup","Palm nut soup","Okra soup"]},
+  {n:"Guinea-Bissau",f:"🇬🇼",r:"Africa",s:"Caldo de mancarra",soups:["Caldo de mancarra","Fish soup","Palm nut soup","Bean soup"]},
+  {n:"Guyana",f:"🇬🇾",r:"Americas",s:"Pepperpot",soups:["Pepperpot","Metemgee","Fish broth","Callaloo soup","Cow heel soup"]},
+  {n:"Haiti",f:"🇭🇹",r:"Americas",s:"Soup joumou",soups:["Soup joumou","Bouyon","Lalo (jute leaf soup)","Black bean soup","Pumpkin soup"]},
+  {n:"Honduras",f:"🇭🇳",r:"Americas",s:"Sopa de caracol",soups:["Sopa de caracol","Sopa de res","Mondongo","Tapado","Enchilada soup"]},
+  {n:"Hungary",f:"🇭🇺",r:"Europe",s:"Gulyás",soups:["Gulyás","Halászlé (fish soup)","Jókai bableves (bean soup)","Újházy tyúkhúsleves (chicken soup)","Meggyleves (cherry soup)"]},
+  {n:"Iceland",f:"🇮🇸",r:"Europe",s:"Kjötsúpa",soups:["Kjötsúpa","Fiskisúpa (fish soup)","Humarsúpa (lobster soup)","Lamb soup","Mushroom soup"]},
+  {n:"India",f:"🇮🇳",r:"Asia",s:"Mulligatawny",soups:["Mulligatawny","Dal","Rasam","Shorba","Tomato shorba"]},
+  {n:"Indonesia",f:"🇮🇩",r:"Asia",s:"Soto ayam",soups:["Soto ayam","Rawon","Soto betawi","Bakso soup","Sayur asem"]},
+  {n:"Iran",f:"🇮🇷",r:"Asia",s:"Ash reshteh",soups:["Ash reshteh","Abgoosht","Ash-e jo (barley soup)","Ash-e anar (pomegranate soup)","Shole zard broth"]},
+  {n:"Iraq",f:"🇮🇶",r:"Asia",s:"Margat bamia",soups:["Margat bamia","Shorba","Lentil soup","Tomato soup","Lamb broth"]},
+  {n:"Ireland",f:"🇮🇪",r:"Europe",s:"Irish stew",soups:["Irish stew","Potato soup","Cock-a-leekie","Seafood chowder","Mushroom soup"]},
+  {n:"Israel",f:"🇮🇱",r:"Asia",s:"Chicken soup with matzo",soups:["Chicken soup with matzo","Lentil soup","Borscht","Vegetable soup","Harira"]},
+  {n:"Italy",f:"🇮🇹",r:"Europe",s:"Ribollita",soups:["Ribollita","Minestrone","Zuppa di fagioli","Acquacotta","Pasta e fagioli"]},
+  {n:"Ivory Coast",f:"🇨🇮",r:"Africa",s:"Kedjenou",soups:["Kedjenou","Palm nut soup","Groundnut soup","Fish soup","Okra soup"]},
+  {n:"Jamaica",f:"🇯🇲",r:"Americas",s:"Pepper pot soup",soups:["Pepper pot soup","Red peas soup","Fish tea","Mannish water","Cow foot soup"]},
+  {n:"Japan",f:"🇯🇵",r:"Asia",s:"Miso soup",soups:["Miso soup","Ramen","Tonjiru","Kenchin-jiru","Ozoni"]},
+  {n:"Jordan",f:"🇯🇴",r:"Asia",s:"Mansaf broth",soups:["Mansaf broth","Lentil soup","Freekeh soup","Vegetable soup","Chicken soup"]},
+  {n:"Kazakhstan",f:"🇰🇿",r:"Asia",s:"Shurpa",soups:["Shurpa","Lagman","Sorpa","Beshbarmak broth","Kaurma-shorpa"]},
+  {n:"Kenya",f:"🇰🇪",r:"Africa",s:"Githeri broth",soups:["Githeri broth","Ugali soup","Nyama choma broth","Vegetable soup","Bean soup"]},
+  {n:"Kiribati",f:"🇰🇮",r:"Oceania",s:"Coconut fish soup",soups:["Coconut fish soup","Taro soup","Breadfruit broth"]},
+  {n:"Korea, North",f:"🇰🇵",r:"Asia",s:"Onban",soups:["Onban","Doenjang jjigae","Cold noodle soup","Bean sprout soup","Seaweed soup"]},
+  {n:"Korea, South",f:"🇰🇷",r:"Asia",s:"Doenjang jjigae",soups:["Doenjang jjigae","Kimchi jjigae","Seolleongtang","Samgyetang","Sundubu jjigae"]},
+  {n:"Kuwait",f:"🇰🇼",r:"Asia",s:"Murabyan",soups:["Murabyan","Harees","Machboos broth","Lentil soup","Lamb soup"]},
+  {n:"Kyrgyzstan",f:"🇰🇬",r:"Asia",s:"Shorpo",soups:["Shorpo","Lagman","Manti broth","Kuurdak broth","Naryn broth"]},
+  {n:"Laos",f:"🇱🇦",r:"Asia",s:"Khao piak sen",soups:["Khao piak sen","Tom khem","Or lam","Kaeng no mai (bamboo soup)","Sour pork rib soup"]},
+  {n:"Latvia",f:"🇱🇻",r:"Europe",s:"Skābeņu zupa",soups:["Skābeņu zupa (sorrel soup)","Zirņu zupa (pea soup)","Kāpostu zupa (cabbage soup)","Biešu zupa (beet soup)","Zivju zupa (fish soup)"]},
+  {n:"Lebanon",f:"🇱🇧",r:"Asia",s:"Adas bil hamod",soups:["Adas bil hamod","Laban bil bayd","Shorba","Kibbeh soup","Chicken broth"]},
+  {n:"Lesotho",f:"🇱🇸",r:"Africa",s:"Moraba-raba",soups:["Moraba-raba","Bean soup","Pumpkin soup","Maize porridge soup"]},
+  {n:"Liberia",f:"🇱🇷",r:"Africa",s:"Palm butter soup",soups:["Palm butter soup","Pepper soup","Greens soup","Fish soup"]},
+  {n:"Libya",f:"🇱🇾",r:"Africa",s:"Sharba",soups:["Sharba","Harira","Lentil soup","Lamb soup","Vegetable soup"]},
+  {n:"Liechtenstein",f:"🇱🇮",r:"Europe",s:"Käseknöpfle soup",soups:["Käseknöpfle soup","Vegetable soup","Beef broth"]},
+  {n:"Lithuania",f:"🇱🇹",r:"Europe",s:"Šaltibarščiai",soups:["Šaltibarščiai (cold beet soup)","Barščiai (hot beet soup)","Žirnių sriuba (pea soup)","Grybų sriuba (mushroom soup)","Bulvių sriuba (potato soup)"]},
+  {n:"Luxembourg",f:"🇱🇺",r:"Europe",s:"Bouneschlupp",soups:["Bouneschlupp (green bean soup)","Gromperenzopp (potato soup)","Lëtzebuerger Bou­ne­schlupp","Onion soup","Vegetable soup"]},
+  {n:"Madagascar",f:"🇲🇬",r:"Africa",s:"Romazava",soups:["Romazava","Ravitoto","Laoka broth","Fish soup","Bean soup"]},
+  {n:"Malawi",f:"🇲🇼",r:"Africa",s:"Bean soup",soups:["Bean soup","Nsima broth","Ndiwo","Pumpkin soup","Vegetable soup"]},
+  {n:"Malaysia",f:"🇲🇾",r:"Asia",s:"Laksa",soups:["Laksa","Bak kut teh","Sup kambing (lamb soup)","Soto","Tom yam"]},
+  {n:"Maldives",f:"🇲🇻",r:"Asia",s:"Garudhiya",soups:["Garudhiya","Mas riha broth","Coconut fish soup","Tuna broth"]},
+  {n:"Mali",f:"🇲🇱",r:"Africa",s:"Tiguadege Na",soups:["Tiguadege Na","Mafe","Okra soup","Bean soup","Millet soup"]},
+  {n:"Malta",f:"🇲🇹",r:"Europe",s:"Minestra",soups:["Minestra","Aljotta (fish soup)","Soppa tal-armla (widow's soup)","Brodu (broth)","Bean soup"]},
+  {n:"Marshall Islands",f:"🇲🇭",r:"Oceania",s:"Coconut fish soup",soups:["Coconut fish soup","Breadfruit soup","Taro broth"]},
+  {n:"Mauritania",f:"🇲🇷",r:"Africa",s:"Thiéboudienne",soups:["Thiéboudienne","Maafe","Lakh (millet porridge)","Fish soup","Lamb broth"]},
+  {n:"Mauritius",f:"🇲🇺",r:"Africa",s:"Dholl puri soup",soups:["Dholl puri soup","Halim","Fish soup","Vegetable broth","Rougaille broth"]},
+  {n:"Mexico",f:"🇲🇽",r:"Americas",s:"Pozole",soups:["Pozole","Menudo","Caldo de res","Sopa de lima","Sopa de fideo"]},
+  {n:"Micronesia",f:"🇫🇲",r:"Oceania",s:"Taro & coconut soup",soups:["Taro & coconut soup","Fish broth","Breadfruit soup"]},
+  {n:"Moldova",f:"🇲🇩",r:"Europe",s:"Zeamă",soups:["Zeamă","Rassolnik","Borsch","Ciorbă de burtă","Bean soup"]},
+  {n:"Monaco",f:"🇲🇨",r:"Europe",s:"Barbagiuan soup",soups:["Barbagiuan soup","Soupe de poisson","Pistou soup","Onion soup"]},
+  {n:"Mongolia",f:"🇲🇳",r:"Asia",s:"Tsuivan",soups:["Tsuivan","Guriltai shul (noodle soup)","Suutei tsai (salt milk tea)","Mutton broth","Khuushuur broth"]},
+  {n:"Montenegro",f:"🇲🇪",r:"Europe",s:"Riblja čorba",soups:["Riblja čorba (fish soup)","Lamb soup","Bean soup","Cicvara broth","Vegetable soup"]},
+  {n:"Morocco",f:"🇲🇦",r:"Africa",s:"Harira",soups:["Harira","Bissara (fava bean soup)","Chorba","Lentil soup","Chermoula fish soup"]},
+  {n:"Mozambique",f:"🇲🇿",r:"Africa",s:"Matapa",soups:["Matapa","Caril de peixe (fish curry soup)","Coconut fish soup","Bean soup","Peanut soup"]},
+  {n:"Myanmar",f:"🇲🇲",r:"Asia",s:"Mohinga",soups:["Mohinga","Shan noodle soup","Mont di","Rakhine mont ti","Coconut noodle soup"]},
+  {n:"Namibia",f:"🇳🇦",r:"Africa",s:"Oshifima",soups:["Oshifima","Kapana broth","Bean soup","Lamb soup","Vegetable soup"]},
+  {n:"Nauru",f:"🇳🇷",r:"Oceania",s:"Coconut fish broth",soups:["Coconut fish broth","Taro soup","Fish soup"]},
+  {n:"Nepal",f:"🇳🇵",r:"Asia",s:"Dal",soups:["Dal","Thukpa (noodle soup)","Kwati","Gundruk soup","Jhol momo soup"]},
+  {n:"Netherlands",f:"🇳🇱",r:"Europe",s:"Erwtensoep",soups:["Erwtensoep (split pea soup)","Groentesoep (vegetable soup)","Tomatensoep","Bruine bonensoep (brown bean soup)","Uiensoep (onion soup)"]},
+  {n:"New Zealand",f:"🇳🇿",r:"Oceania",s:"Pumpkin soup",soups:["Pumpkin soup","Mussel chowder","Lamb soup","Kumara soup","Seafood chowder"]},
+  {n:"Nicaragua",f:"🇳🇮",r:"Americas",s:"Sopa de albóndigas",soups:["Sopa de albóndigas","Nacatamal broth","Indio viejo","Sopa de res","Gallo pinto soup"]},
+  {n:"Niger",f:"🇳🇪",r:"Africa",s:"Millet soup",soups:["Millet soup","Groundnut soup","Bean soup","Lamb broth","Vegetable soup"]},
+  {n:"Nigeria",f:"🇳🇬",r:"Africa",s:"Egusi soup",soups:["Egusi soup","Ogbono soup","Efo riro","Banga soup","Pepper soup"]},
+  {n:"North Macedonia",f:"🇲🇰",r:"Europe",s:"Tavče gravče",soups:["Tavče gravče","Čorba","Lamb soup","Fish soup","Vegetable soup"]},
+  {n:"Norway",f:"🇳🇴",r:"Europe",s:"Fiskesuppe",soups:["Fiskesuppe (fish soup)","Ertestuing (pea soup)","Kjøttkraft (beef broth)","Bringebærsuppe (raspberry soup)","Nettlesuppe"]},
+  {n:"Oman",f:"🇴🇲",r:"Asia",s:"Shuwa broth",soups:["Shuwa broth","Harees","Maraq","Lentil soup","Fish soup"]},
+  {n:"Pakistan",f:"🇵🇰",r:"Asia",s:"Nihari",soups:["Nihari","Haleem","Paye (trotters soup)","Dal","Yakhni"]},
+  {n:"Palau",f:"🇵🇼",r:"Oceania",s:"Taro & fish soup",soups:["Taro & fish soup","Coconut crab soup","Fish broth"]},
+  {n:"Panama",f:"🇵🇦",r:"Americas",s:"Sancocho",soups:["Sancocho","Sopa de mariscos","Caldo de patas","Sopa de frijoles","Ropa vieja broth"]},
+  {n:"Papua New Guinea",f:"🇵🇬",r:"Oceania",s:"Mumu stew",soups:["Mumu stew","Coconut fish soup","Taro soup","Sweet potato soup"]},
+  {n:"Paraguay",f:"🇵🇾",r:"Americas",s:"Sopa paraguaya",soups:["Sopa paraguaya","Bori bori","Locro","Sopa de maní","Caldo de gallina"]},
+  {n:"Peru",f:"🇵🇪",r:"Americas",s:"Aguadito de pollo",soups:["Aguadito de pollo","Caldo de gallina","Sopa a la minuta","Chupe de camarones","Parihuela"]},
+  {n:"Philippines",f:"🇵🇭",r:"Asia",s:"Sinigang",soups:["Sinigang","Nilaga","Tinola","Bulalo","Arroz caldo"]},
+  {n:"Poland",f:"🇵🇱",r:"Europe",s:"Żurek",soups:["Żurek","Barszcz (beet soup)","Rosół (chicken broth)","Grochówka (pea soup)","Flaczki (tripe soup)"]},
+  {n:"Portugal",f:"🇵🇹",r:"Europe",s:"Caldo verde",soups:["Caldo verde","Açorda","Sopa de peixe","Canja de galinha","Sopa de grão"]},
+  {n:"Qatar",f:"🇶🇦",r:"Asia",s:"Jareesh",soups:["Jareesh","Harees","Lentil soup","Maraq","Chicken soup"]},
+  {n:"Romania",f:"🇷🇴",r:"Europe",s:"Ciorbă de burtă",soups:["Ciorbă de burtă","Ciorbă de legume","Ciorbă de perișoare","Ciorbă rădăuțeană","Zeamă de pui"]},
+  {n:"Russia",f:"🇷🇺",r:"Europe",s:"Borscht",soups:["Borscht","Shchi (cabbage soup)","Solyanka","Ukha (fish soup)","Rassolnik"]},
+  {n:"Rwanda",f:"🇷🇼",r:"Africa",s:"Isombe",soups:["Isombe","Bean soup","Plantain soup","Vegetable broth","Goat soup"]},
+  {n:"Saint Kitts and Nevis",f:"🇰🇳",r:"Americas",s:"Pelau soup",soups:["Pelau soup","Conch chowder","Fish broth","Pumpkin soup"]},
+  {n:"Saint Lucia",f:"🇱🇨",r:"Americas",s:"Callaloo soup",soups:["Callaloo soup","Green fig soup","Fish broth","Pumpkin soup"]},
+  {n:"Saint Vincent and the Grenadines",f:"🇻🇨",r:"Americas",s:"Breadfruit soup",soups:["Breadfruit soup","Callaloo soup","Fish broth","Pumpkin soup"]},
+  {n:"Samoa",f:"🇼🇸",r:"Oceania",s:"Palusami",soups:["Palusami","Coconut fish soup","Taro broth","Pork bone soup"]},
+  {n:"San Marino",f:"🇸🇲",r:"Europe",s:"Zuppa di fagioli",soups:["Zuppa di fagioli","Minestrone","Pasta e fagioli","Vegetable soup"]},
+  {n:"São Tomé and Príncipe",f:"🇸🇹",r:"Africa",s:"Calulu de peixe",soups:["Calulu de peixe","Cachupa","Palm nut soup","Fish broth"]},
+  {n:"Saudi Arabia",f:"🇸🇦",r:"Asia",s:"Harees",soups:["Harees","Maraq","Jareesh broth","Lentil soup","Lamb shorba"]},
+  {n:"Senegal",f:"🇸🇳",r:"Africa",s:"Thiébou yapp",soups:["Thiébou yapp","Maafe","Yassa broth","Caaldou","Soupou kandia"]},
+  {n:"Serbia",f:"🇷🇸",r:"Europe",s:"Čorba",soups:["Čorba","Pasulj (bean soup)","Riblja čorba (fish soup)","Teleća čorba (veal soup)","Kokošija supa (chicken soup)"]},
+  {n:"Seychelles",f:"🇸🇨",r:"Africa",s:"Ladob",soups:["Ladob","Bouyon","Fish soup","Coconut broth","Shark chutney soup"]},
+  {n:"Sierra Leone",f:"🇸🇱",r:"Africa",s:"Plasas",soups:["Plasas","Egusi soup","Palm nut soup","Fish soup","Groundnut soup"]},
+  {n:"Singapore",f:"🇸🇬",r:"Asia",s:"Bak kut teh",soups:["Bak kut teh","Laksa","Sup tulang","Fish head curry soup","Lor mee"]},
+  {n:"Slovakia",f:"🇸🇰",r:"Europe",s:"Kapustnica",soups:["Kapustnica (sauerkraut soup)","Cesnaková polievka (garlic soup)","Fazuľová polievka (bean soup)","Hubová polievka (mushroom soup)","Rajčinová polievka (tomato soup)"]},
+  {n:"Slovenia",f:"🇸🇮",r:"Europe",s:"Ričet",soups:["Ričet","Jota (sauerkraut & bean soup)","Goveja juha (beef broth)","Gobova juha (mushroom soup)","Mineštra"]},
+  {n:"Solomon Islands",f:"🇸🇧",r:"Oceania",s:"Coconut fish soup",soups:["Coconut fish soup","Taro soup","Sweet potato broth","Fish broth"]},
+  {n:"Somalia",f:"🇸🇴",r:"Africa",s:"Suqaar iyo baasto",soups:["Suqaar iyo baasto","Cambuulo","Lamb broth","Vegetable soup","Lentil soup"]},
+  {n:"South Africa",f:"🇿🇦",r:"Africa",s:"Potjiekos",soups:["Potjiekos","Bobotie broth","Butternut soup","Oxtail soup","Lamb soup"]},
+  {n:"South Sudan",f:"🇸🇸",r:"Africa",s:"Ful medames",soups:["Ful medames","Bean soup","Lamb broth","Vegetable soup","Groundnut soup"]},
+  {n:"Spain",f:"🇪🇸",r:"Europe",s:"Gazpacho",soups:["Gazpacho","Cocido madrileño","Fabada asturiana","Sopa de ajo","Escudella"]},
+  {n:"Sri Lanka",f:"🇱🇰",r:"Asia",s:"Kola kanda",soups:["Kola kanda","Sothi","Dhal curry","Fish soup","Chicken curry soup"]},
+  {n:"Sudan",f:"🇸🇩",r:"Africa",s:"Ful",soups:["Ful","Mullah (okra soup)","Shorba","Lentil soup","Lamb broth"]},
+  {n:"Suriname",f:"🇸🇷",r:"Americas",s:"Peanut soup",soups:["Peanut soup","Moksi-alesi broth","Pom","Tomtom soup","Fish soup"]},
+  {n:"Sweden",f:"🇸🇪",r:"Europe",s:"Ärtsoppa",soups:["Ärtsoppa (pea soup)","Nässelsoppa (nettle soup)","Fisksoppa (fish soup)","Svampsoppa (mushroom soup)","Köttbulle soup"]},
+  {n:"Switzerland",f:"🇨🇭",r:"Europe",s:"Busecca",soups:["Busecca","Bündner Gerstensuppe (barley soup)","Mehlsuppe","Chäshörnlisuppe","Vegetable soup"]},
+  {n:"Syria",f:"🇸🇾",r:"Asia",s:"Fatte",soups:["Fatte","Shorba adas (lentil soup)","Kibbeh soup","Yogurt soup","Freekeh soup"]},
+  {n:"Taiwan",f:"🇹🇼",r:"Asia",s:"Oyster vermicelli soup",soups:["Oyster vermicelli soup","Beef noodle soup","Milkfish soup","Pork rib soup","Sesame oil chicken soup"]},
+  {n:"Tajikistan",f:"🇹🇯",r:"Asia",s:"Mastoba",soups:["Mastoba","Shurbo","Lagman","Ugro (noodle soup)","Naryn broth"]},
+  {n:"Tanzania",f:"🇹🇿",r:"Africa",s:"Mchuzi wa samaki",soups:["Mchuzi wa samaki","Ndizi soup (plantain)","Maharage (bean soup)","Coconut fish soup","Vegetable broth"]},
+  {n:"Thailand",f:"🇹🇭",r:"Asia",s:"Tom yum goong",soups:["Tom yum goong","Tom kha gai","Khao tom (rice soup)","Gaeng jeud (clear soup)","Tom saap"]},
+  {n:"Togo",f:"🇹🇬",r:"Africa",s:"Gboma dessi",soups:["Gboma dessi","Palm nut soup","Groundnut soup","Okra soup","Bean soup"]},
+  {n:"Tonga",f:"🇹🇴",r:"Oceania",s:"Lu pulu",soups:["Lu pulu","Coconut fish soup","Taro soup","Pork bone broth"]},
+  {n:"Trinidad and Tobago",f:"🇹🇹",r:"Americas",s:"Callaloo",soups:["Callaloo","Cow heel soup","Pelau broth","Sancoche","Pumpkin soup"]},
+  {n:"Tunisia",f:"🇹🇳",r:"Africa",s:"Lablabi",soups:["Lablabi","Harira","Shorba","Vegetable soup","Fish soup"]},
+  {n:"Turkey",f:"🇹🇷",r:"Asia",s:"Mercimek çorbası",soups:["Mercimek çorbası (red lentil soup)","Yayla çorbası (yogurt soup)","İşkembe çorbası (tripe soup)","Domates çorbası (tomato soup)","Ezogelin çorbası"]},
+  {n:"Turkmenistan",f:"🇹🇲",r:"Asia",s:"Dograma",soups:["Dograma","Shurpa","Lagman","Mastava","Çal (sour milk soup)"]},
+  {n:"Tuvalu",f:"🇹🇻",r:"Oceania",s:"Coconut fish soup",soups:["Coconut fish soup","Taro broth","Fish soup"]},
+  {n:"Uganda",f:"🇺🇬",r:"Africa",s:"Groundnut stew",soups:["Groundnut stew","Bean soup","Matoke broth","Fish soup","Vegetable soup"]},
+  {n:"Ukraine",f:"🇺🇦",r:"Europe",s:"Borscht",soups:["Borscht","Kapusniak (cabbage soup)","Rassolnik","Kulish","Yushka (fish soup)"]},
+  {n:"United Arab Emirates",f:"🇦🇪",r:"Asia",s:"Harees",soups:["Harees","Maraq","Lentil soup","Jareesh broth","Chicken shorba"]},
+  {n:"United Kingdom",f:"🇬🇧",r:"Europe",s:"Cock-a-leekie",soups:["Cock-a-leekie","Pea and ham soup","Mulligatawny","Scotch broth","Cullen skink"]},
+  {n:"United States",f:"🇺🇸",r:"Americas",s:"Clam chowder",soups:["Clam chowder","Chicken noodle soup","French onion soup","Gumbo","Tomato soup"]},
+  {n:"Uruguay",f:"🇺🇾",r:"Americas",s:"Puchero",soups:["Puchero","Sopa de verduras","Caldo de res","Sopa de lentejas","Chupe de mariscos"]},
+  {n:"Uzbekistan",f:"🇺🇿",r:"Asia",s:"Mastava",soups:["Mastava","Shurpa","Lagman","Mashkhurda","Moshubirinch"]},
+  {n:"Vanuatu",f:"🇻🇺",r:"Oceania",s:"Lap lap",soups:["Lap lap","Coconut fish soup","Taro soup","Pork bone broth"]},
+  {n:"Vatican City",f:"🇻🇦",r:"Europe",s:"Stracciatella",soups:["Stracciatella","Minestrone","Pasta e fagioli","Zuppa di verdure"]},
+  {n:"Venezuela",f:"🇻🇪",r:"Americas",s:"Sancocho",soups:["Sancocho","Sopa de arvejas","Hervido de res","Mondongo","Crema de auyama"]},
+  {n:"Vietnam",f:"🇻🇳",r:"Asia",s:"Phở",soups:["Phở","Bún bò Huế","Bún riêu","Canh chua","Súp măng cua"]},
+  {n:"Yemen",f:"🇾🇪",r:"Asia",s:"Fahsa",soups:["Fahsa","Saltah","Maraq","Shafut","Hareesh"]},
+  {n:"Zambia",f:"🇿🇲",r:"Africa",s:"Nshima broth",soups:["Nshima broth","Bean soup","Groundnut soup","Relish broth","Fish soup"]},
+  {n:"Zimbabwe",f:"🇿🇼",r:"Africa",s:"Sadza broth",soups:["Sadza broth","Bean soup","Groundnut soup","Pumpkin soup","Beef stew"]}
 ];
 
 const SK = "soup-tracker-v2";
 let state = {};
-let curRegion = "all";
-let curStatus = "all";
-let spotIdx = null;
+let curRegion = "all", curStatus = "all", spotIdx = null;
 
+function recipeUrl(name) {
+  return "https://www.google.com/search?q=" + encodeURIComponent(name + " recipe");
+}
 function encode(s) {
-  const made = [], want = [];
-  Object.entries(s).forEach(([k,v]) => { if(v==="made") made.push(k); else if(v==="want") want.push(k); });
+  const made=[], want=[];
+  Object.entries(s).forEach(([k,v])=>{ if(v==="made") made.push(k); else if(v==="want") want.push(k); });
   return btoa(unescape(encodeURIComponent(JSON.stringify({m:made,w:want}))));
 }
 function decode(str) {
   try {
     const d = JSON.parse(decodeURIComponent(escape(atob(str))));
-    const s = {};
+    const s={};
     (d.m||[]).forEach(k=>s[k]="made");
     (d.w||[]).forEach(k=>s[k]="want");
     return s;
-  } catch(e) { return null; }
+  } catch(e){ return null; }
 }
-
 function load() {
-  try {
-    const raw = localStorage.getItem(SK);
-    if (raw) state = JSON.parse(raw);
-  } catch(e) {}
+  try { const r=localStorage.getItem(SK); if(r) state=JSON.parse(r); } catch(e){}
   render();
 }
-function save() {
-  try { localStorage.setItem(SK, JSON.stringify(state)); } catch(e) {}
-}
+function save() { try { localStorage.setItem(SK,JSON.stringify(state)); } catch(e){} }
 function updateExport() {
-  const el = document.getElementById("export-code");
-  el.textContent = Object.keys(state).length ? encode(state) : "Nothing saved yet";
+  document.getElementById("export-code").textContent = Object.keys(state).length ? encode(state) : "Nothing saved yet";
 }
 async function copyExport() {
   const code = document.getElementById("export-code").textContent;
-  if (code === "Nothing saved yet") return;
+  if (code==="Nothing saved yet") return;
   try { await navigator.clipboard.writeText(code); flash("Copied!"); }
   catch(e) { flash("Select the code above and copy manually"); }
 }
@@ -541,135 +396,112 @@ function doImport() {
   const val = document.getElementById("import-input").value.trim();
   if (!val) return;
   const parsed = decode(val);
-  if (!parsed) { flash("Invalid code — double-check it", true); return; }
-  state = parsed;
-  save();
-  render();
-  flash("Progress loaded!");
+  if (!parsed) { flash("Invalid code", true); return; }
+  state = parsed; save(); render(); flash("Progress loaded!");
   document.getElementById("import-input").value = "";
 }
 function flash(msg, err) {
   const el = document.getElementById("feedback");
-  el.textContent = msg;
-  el.style.color = err ? "#E24B4A" : "#1D9E75";
-  setTimeout(() => el.textContent = "", 3000);
+  el.textContent = msg; el.style.color = err ? "#E24B4A" : "#1D9E75";
+  setTimeout(()=>el.textContent="", 3000);
 }
-
 function updateStats() {
   const made = Object.values(state).filter(v=>v==="made").length;
   const want = Object.values(state).filter(v=>v==="want").length;
   document.getElementById("stat-made").textContent = made;
   document.getElementById("stat-want").textContent = want;
-  document.getElementById("stat-untried").textContent = 195 - made - want;
+  document.getElementById("stat-untried").textContent = 195-made-want;
   document.getElementById("stat-pct").textContent = Math.round(made/195*100)+"%";
 }
-
 function getFiltered() {
   const q = document.getElementById("search").value.toLowerCase();
-  return COUNTRIES.filter(c => {
-    const rOk = curRegion === "all" || c.r === curRegion;
-    const st = state[c.n] || "none";
-    const sOk = curStatus === "all" || st === curStatus;
+  return COUNTRIES.filter(c=>{
+    const rOk = curRegion==="all" || c.r===curRegion;
+    const st = state[c.n]||"none";
+    const sOk = curStatus==="all" || st===curStatus;
     const qOk = !q || c.n.toLowerCase().includes(q) || c.s.toLowerCase().includes(q);
     return rOk && sOk && qOk;
   });
 }
-
 function renderList() {
-  const items = getFiltered();
-  document.getElementById("list").innerHTML = items.map(c => {
-    const st = state[c.n] || "none";
-    const badge = st==="made" ? "✓ made" : st==="want" ? "★ want" : "";
+  document.getElementById("list").innerHTML = getFiltered().map(c=>{
+    const st = state[c.n]||"none";
+    const badge = st==="made"?"✓ made":st==="want"?"★ want":"";
     return `<div class="ci ${st}" onclick="toggleItem('${c.n.replace(/'/g,"\\'")}')">
       <span class="ci-flag">${c.f}</span>
-      <span class="ci-name" title="${c.s}">${c.n}</span>
-      ${badge ? `<span class="ci-badge">${badge}</span>` : ""}
+      <span class="ci-name" title="${c.soups.join(', ')}">${c.n}</span>
+      ${badge?`<span class="ci-badge">${badge}</span>`:""}
     </div>`;
   }).join("");
 }
-
 function toggleItem(name) {
-  const cur = state[name] || "none";
-  if (cur === "none") state[name] = "want";
-  else if (cur === "want") state[name] = "made";
+  const cur = state[name]||"none";
+  if(cur==="none") state[name]="want";
+  else if(cur==="want") state[name]="made";
   else delete state[name];
-  save();
-  render();
-  if (spotIdx !== null && COUNTRIES[spotIdx].n === name) updateSpotBtns();
+  save(); render();
+  if(spotIdx!==null && COUNTRIES[spotIdx].n===name) updateSpotBtns();
 }
-
 function render() { updateStats(); renderList(); updateExport(); }
-
 function showSpot(idx) {
   spotIdx = idx;
   const c = COUNTRIES[idx];
   document.getElementById("sp-flag").textContent = c.f;
   document.getElementById("sp-name").textContent = c.n;
-  document.getElementById("sp-soup").textContent = c.s;
   document.getElementById("sp-region").textContent = c.r;
+  const soupsEl = document.getElementById("sp-soups");
+  soupsEl.innerHTML = c.soups.map(s =>
+    `<a class="sp-soup-link" href="${recipeUrl(s)}" target="_blank" rel="noopener">${s}</a>`
+  ).join("");
   document.getElementById("sp-btns").style.display = "flex";
   updateSpotBtns();
 }
 function updateSpotBtns() {
-  if (spotIdx === null) return;
-  const st = state[COUNTRIES[spotIdx].n] || "none";
-  const mBtn = document.getElementById("sp-made");
-  const wBtn = document.getElementById("sp-want");
-  mBtn.className = "sp-btn" + (st==="made" ? " made" : "");
-  mBtn.textContent = st==="made" ? "✓ Made this!" : "I've made this";
-  wBtn.className = "sp-btn" + (st==="want" ? " want" : "");
-  wBtn.textContent = st==="want" ? "★ On my list" : "Want to try";
+  if(spotIdx===null) return;
+  const st = state[COUNTRIES[spotIdx].n]||"none";
+  const mBtn=document.getElementById("sp-made"), wBtn=document.getElementById("sp-want");
+  mBtn.className="sp-btn"+(st==="made"?" made":"");
+  mBtn.textContent = st==="made"?"✓ Made this!":"I've made this";
+  wBtn.className="sp-btn"+(st==="want"?" want":"");
+  wBtn.textContent = st==="want"?"★ On my list":"Want to try";
 }
 function setStatus(val) {
-  if (spotIdx === null) return;
-  const name = COUNTRIES[spotIdx].n;
-  if (!val) delete state[name];
-  else state[name] = val;
-  save();
-  render();
-  updateSpotBtns();
+  if(spotIdx===null) return;
+  const name=COUNTRIES[spotIdx].n;
+  if(!val) delete state[name]; else state[name]=val;
+  save(); render(); updateSpotBtns();
 }
-function spinRandom() { showSpot(Math.floor(Math.random() * COUNTRIES.length)); }
+function spinRandom() { showSpot(Math.floor(Math.random()*COUNTRIES.length)); }
 function spinUntried() {
-  const pool = COUNTRIES.map((_,i)=>i).filter(i=>!state[COUNTRIES[i].n]);
-  if (!pool.length) {
-    document.getElementById("sp-name").textContent = "You've tried them all!";
-    document.getElementById("sp-flag").textContent = "🏆";
-    document.getElementById("sp-soup").textContent = "";
-    document.getElementById("sp-region").textContent = "";
-    document.getElementById("sp-btns").style.display = "none";
-    spotIdx = null; return;
+  const pool=COUNTRIES.map((_,i)=>i).filter(i=>!state[COUNTRIES[i].n]);
+  if(!pool.length){
+    document.getElementById("sp-name").textContent="You've tried them all!";
+    document.getElementById("sp-flag").textContent="🏆";
+    document.getElementById("sp-region").textContent="";
+    document.getElementById("sp-soups").innerHTML="";
+    document.getElementById("sp-btns").style.display="none";
+    spotIdx=null; return;
   }
-  showSpot(pool[Math.floor(Math.random() * pool.length)]);
+  showSpot(pool[Math.floor(Math.random()*pool.length)]);
 }
 function clearAll() {
-  if (!confirm("Clear all progress?")) return;
-  state = {};
-  save();
-  render();
-  if (spotIdx !== null) updateSpotBtns();
+  if(!confirm("Clear all progress?")) return;
+  state={}; save(); render();
+  if(spotIdx!==null) updateSpotBtns();
 }
-function setFilter(type, val) {
-  if (type === "region") {
-    curRegion = val;
-    document.querySelectorAll("[id^='rfbtn-']").forEach(b => b.classList.remove("active"));
-    const el = document.getElementById("rfbtn-" + val);
-    if (el) el.classList.add("active");
-    if (curStatus !== "all") {
-      curStatus = "all";
-      document.querySelectorAll("[id^='sfbtn-']").forEach(b => b.classList.remove("active"));
-    }
+function setFilter(type,val) {
+  if(type==="region"){
+    curRegion=val;
+    document.querySelectorAll("[id^='rfbtn-']").forEach(b=>b.classList.remove("active"));
+    const el=document.getElementById("rfbtn-"+val); if(el) el.classList.add("active");
+    if(curStatus!=="all"){ curStatus="all"; document.querySelectorAll("[id^='sfbtn-']").forEach(b=>b.classList.remove("active")); }
   } else {
-    curStatus = curStatus === val ? "all" : val;
-    document.querySelectorAll("[id^='sfbtn-']").forEach(b => b.classList.remove("active"));
-    if (curStatus !== "all") {
-      const el = document.getElementById("sfbtn-" + curStatus);
-      if (el) el.classList.add("active");
-    }
+    curStatus=curStatus===val?"all":val;
+    document.querySelectorAll("[id^='sfbtn-']").forEach(b=>b.classList.remove("active"));
+    if(curStatus!=="all"){ const el=document.getElementById("sfbtn-"+curStatus); if(el) el.classList.add("active"); }
   }
   renderList();
 }
-
 load();
 </script>
 </body>
